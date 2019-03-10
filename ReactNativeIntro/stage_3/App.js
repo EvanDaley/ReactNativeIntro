@@ -17,8 +17,9 @@ export default class App extends React.Component {
   }
 
   render() {
-    return this.state.isAwaitingClick
-      ? <Home proceed={() => this.proceed()} />
-      : <Items />;
+    return <Items />;
+    // return this.state.isAwaitingClick
+    // ? <Home proceed={() => this.proceed()} />
+    // : <Items />;
   }
 }
