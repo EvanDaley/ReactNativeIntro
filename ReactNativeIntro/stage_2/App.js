@@ -1,21 +1,24 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { TouchableOpacity, StyleSheet, Text, View } from "react-native";
+import React from "react";
+import Items from "./components/Items";
+import Home from "./components/Home";
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isAwaitingClick: true
+    };
+  }
+
+  proceed() {
+    this.setState({ isAwaitingClick: false });
+  }
+
   render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
-    );
+    return this.state.isAwaitingClick
+      ? <Home proceed={() => this.proceed()} />
+      : <Items />;
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

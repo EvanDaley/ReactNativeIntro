@@ -46,6 +46,18 @@ export default class Items extends React.Component {
   }
 
   render() {
+    // Arrow Functions
+    function func(param) {
+      return param;
+    }
+    const func = param => {
+      param;
+    };
+
+    // Object Destructuring
+    const key = this.object.key;
+    const { key } = this.object;
+
     const renderItem = ({ item, index }) => {
       const Sub = () => {
         const cost = item.cost ? "$" + parseFloat(item.cost).toFixed(2) : "na";
